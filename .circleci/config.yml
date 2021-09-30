@@ -28,5 +28,4 @@ jobs:
 workflows:
   my-workflow:
     jobs:
-      - aws-cli/run
       - create_infrastructure
