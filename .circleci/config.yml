@@ -20,7 +20,7 @@ jobs:
           name: "Ensure backend infrastructure exist"
           command: |
             aws cloudformation create-stack \
-              --template-body file://home/ubuntu/Infra-Creation/template.yml \
+              --template-body file:///home/ubuntu/Infra-Creation/template.yml \
               --stack-name my-stack
 
 # Invoke jobs via workflows
