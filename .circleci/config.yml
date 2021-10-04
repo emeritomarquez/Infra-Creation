@@ -21,7 +21,7 @@ jobs:
           command: |
             aws cloudformation deploy \
               --stack-name my-stack \
-              --template-file /home/ubuntu/Infra-Creation/.circleci/template.yml
+              --template-file template.yml
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
