@@ -2,17 +2,17 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: ND9991 C3 L4 
 Resources:
-EC2Instance:
- Type: 'AWS::EC2::Instance'
- Properties:
+ EC2Instance:
+  Type: 'AWS::EC2::Instance'
+  Properties:
    SecurityGroups:
      - !Ref InstanceSecurityGroup
    KeyName: ec2-emerito
    ImageId: 'ami-09889d8d54f9e0a0e' 
    InstanceType: t2.micro
-InstanceSecurityGroup:
- Type: 'AWS::EC2::SecurityGroup'
- Properties:
+ InstanceSecurityGroup:
+  Type: 'AWS::EC2::SecurityGroup'
+  Properties:
    GroupDescription: Enable SSH access via port 22
    SecurityGroupIngress:
      - IpProtocol: tcp
