@@ -85,8 +85,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Create Cloudformation Stack
-          command: |
+          name: Monitor Cloudformation Stack creation
+          command: 
             aws cloudformation describe-stack-events --stack-name infra01
 
 workflows:
