@@ -86,7 +86,7 @@ jobs:
       - run:
           name: Monitor Cloudformation Stack creation
           command: 
-            aws cloudformation describe-stack-events --stack-name infra01
+            aws cloudformation describe-stack-events --stack-name infra02
 
 workflows:
   # Name the workflow "welcome"
