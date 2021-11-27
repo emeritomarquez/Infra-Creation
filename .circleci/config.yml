@@ -71,7 +71,7 @@ jobs:
       - run:
           name: Create Cloudformation Stack
           command: |
-            aws cloudformation create-stack \
+            aws cloudformation deploy \
               --template-body file://project2ab-network.yml \
               --parameters file://project2ab-network-parameters.json
               --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
