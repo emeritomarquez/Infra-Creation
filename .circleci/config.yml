@@ -19,7 +19,7 @@ jobs:
       - run:
           name: "Ensure backend infrastructure exist"
           command: |
-            aws cloudformation create-stack --stack-name first_infra --template-body file://project2aa-network.yml --parameters file://project2aa-network-parameters.json 
+            aws cloudformation create-stack --stack-name infra01 --template-body file://project2aa-network.yml --parameters file://project2aa-network-parameters.json 
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
