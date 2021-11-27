@@ -71,7 +71,7 @@ jobs:
       - run:
           name: Create Cloudformation Stack
           command: |
-            aws cloudformation deploy --stack-name infra01 --template-file .circleci/template.yml --region us-west-2 
+            aws cloudformation deploy --stack-name infra02 --template-file .circleci/template.yml --region us-west-2 
             
 # Fail the job intentionally to simulate an error.
       # Uncomment the line below if you want to fail the current step
