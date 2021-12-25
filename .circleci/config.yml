@@ -13,26 +13,43 @@ jobs:
         - checkout # check out the code in the project directory
         - run: echo "hello world" # run the `echo` command
 # Sequential workflow
-  create_infrastructure: 
+  create_network: 
       docker:
         - image: amazon/aws-cli
       steps:
         - checkout
         - run:
-            name: Create Cloudformation Stack
+            name: Create Cloudformation network Stack
+            command: |
+              aws cloudformation create-stack \
+                --template-body file://network.yml \
+                --stack-name myStack-network-infra-cicd \
+                --parameters file://network-parameters.json \
+                --region us-west-2
+  create_server:
+      docker:
+        - image: amazon/aws-cli
+      steps:
+        - checkout
+        - run:
+            name: Create Cloudformation server Stack
             command: |
               aws cloudformation create-stack \
                 --template-body file://template.yml \
-                --stack-name myStack-infra03 \
+                --stack-name myStack-server-infra-cicd \
                 --region us-west-2
 #              aws cloudformation deploy \
 #                --template-file template.yml \
 #                --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
 #                --region us-west-2
+       
 workflows:
   my_workflow:
       jobs:
         - myjob1
-        - create_infrastructure
+        - create_network
+        - create-server:
+            requires:
+              create_network
 
 
