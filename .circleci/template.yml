@@ -4,16 +4,16 @@
 #
 Description: ND9991 C3 L4 
 Resources:
-  EC2Instance:
+#  EC2Instance:
     Type: 'AWS::EC2::Instance'
-#    Properties:
-#      SecurityGroups:
-#        - !Ref InstanceSecurityGroup
+    Properties:
+      SecurityGroups:
+        - !Ref InstanceSecurityGroup
       # Change this, as applicable to you
-#      KeyName: ec2-emerito
+      KeyName: ec2-emerito
       # Change this, as applicable to you
-#      ImageId: 'ami-074251216af698218' 
-#      InstanceType: t2.micro
+      ImageId: 'ami-074251216af698218' 
+      InstanceType: t2.micro
   InstanceSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
