@@ -50,6 +50,6 @@ workflows:
         - create_network
         - create_server:
             requires:
-              create_network
+              - create_network
 
 
