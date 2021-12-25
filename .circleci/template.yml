@@ -6,8 +6,7 @@ Resources:
     Type: 'AWS::EC2::Instance'
     Properties:
       SecurityGroups:
-#        - !Ref InstanceSecurityGroup
-         - sg-003dc8b77794c1506
+        - !Ref InstanceSecurityGroup
       KeyName: ec2-emerito
       ImageId: 'ami-09889d8d54f9e0a0e' 
       InstanceType: t2.micro
