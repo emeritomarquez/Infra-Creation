@@ -4,17 +4,17 @@
 #
 Description: ND9991 C3 L4 
 Resources:
-#  EC2Instance:
+  EC2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
-      SecurityGroups:
-        - !Ref InstanceSecurityGroup
+#      SecurityGroups:
+#        - !Ref InstanceSecurityGroup
       # Change this, as applicable to you
       KeyName: ec2-emerito
       # Change this, as applicable to you
       ImageId: 'ami-074251216af698218' 
       InstanceType: t2.micro
-  InstanceSecurityGroup:
+#  InstanceSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
       GroupDescription: Enable SSH access via port 22
