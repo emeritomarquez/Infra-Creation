@@ -101,9 +101,3 @@ Outputs:
         Value: !Ref PublicSubnet1
         Export:
           Name: !Sub ${EnvironmentName}-PUB1-SN
-
-    PrivateSubnet1:
-        Description: A reference to the private subnet in the 1st Availability Zone
-        Value: !Ref PrivateSubnet1
-        Export:
-          Name: !Sub ${EnvironmentName}-PRI1-SN
