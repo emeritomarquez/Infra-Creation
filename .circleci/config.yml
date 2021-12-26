@@ -21,6 +21,9 @@ jobs:
               pwd
         - run:
             command:
+              cd .circleci
+        - run:
+            command:
               ls -la . ..
         - run:
             command:
