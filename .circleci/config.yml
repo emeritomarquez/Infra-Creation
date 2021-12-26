@@ -37,7 +37,7 @@ jobs:
           name: Create Cloudformation network Stack
           command: | 
              aws cloudformation create-stack \
-                --stack-name myStack_network_infra_cicd \
+                --stack-name myStackNetworkInfraCICD \
                 --template-body file://network.yml \
                 --parameters file://network-parameters.json \
                 --region us-west-2
