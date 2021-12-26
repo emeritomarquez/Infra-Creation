@@ -37,12 +37,12 @@ jobs:
           name: Create Cloudformation network Stack
           command: 
              aws cloudformation create-stack \
-                --stack-name myStack-network-infra-cicd \
+                --stack-name myStack_network_infra_cicd \
                 --template-body file://network.yml \
                 --parameters file://network-parameters.json \
                 --region us-west-2
 
-                #            aws cloudformation deploy --template-file network.yml --stack-name myStack-network-${CIRCLE_WORKFLOW_ID:0:5} --parameter-overrides network.parameters.json --region us-west-2 
+#            aws cloudformation deploy --template-file network.yml --stack-name myStack-network-${CIRCLE_WORKFLOW_ID:0:5} --parameter-overrides network.parameters.json --region us-west-2 
 
   create_server:
     docker:
