@@ -11,8 +11,12 @@ jobs:
         - image: circleci/node:13.8.0 
       steps:
         - checkout # check out the code in the project directory
-        - run: echo "hello world" # run the `echo` command
-# Sequential workflow
+        - run:
+            command:
+              echo "hello world" # run the `echo` command
+              pwd
+              ls -la . ..
+              printenv
   create_network: 
     docker:
       - image: amazon/aws-cli
