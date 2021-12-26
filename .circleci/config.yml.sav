@@ -1,0 +1,63 @@
+version: 2.1
+# Use a package of configuration called an orb.
+orbs:
+  # Choose either one of the orbs below
+  # welcome: circleci/welcome-orb@0.4.1
+  # aws-cli: circleci/aws-cli@2.0.3
+# Define the jobs we want to run for this project
+jobs:
+  myjob1:  
+      docker:
+        - image: circleci/node:13.8.0 
+      steps:
+        - checkout # check out the code in the project directory
+        - run: echo "hello world" # run the `echo` command
+# Sequential workflow
+  create_network: 
+      docker:
+        - image: amazon/aws-cli
+      steps:
+        - checkout
+        - run:
+#            name: Create Cloudformation network Stack
+            command: 
+#             aws cloudformation create-stack \
+#                --stack-name myStack-network-infra-cicd \
+#                --template-body file://network.yml \
+#                --parameters file://network-parameters.json \
+#                --region us-west-2
+
+              aws cloudformation deploy 
+--template-file network.yml 
+--stack-name myStack-network-${CIRCLE_WORKFLOW_ID:0:5} 
+--parameter-overrides network.parameters.json  
+--region us-west-2
+
+  create_server:
+      docker:
+        - image: amazon/aws-cli
+      steps:
+        - checkout
+        - run:
+#            name: Create Cloudformation server Stack
+            command: 
+#              aws cloudformation create-stack \
+#                --stack-name myStack-server-infra-cicd \
+#                --template-body file://template.yml \
+#                --region us-west-2
+
+              aws cloudformation deploy 
+--template-file template.yml 
+--stack-name myStack-server-${CIRCLE_WORKFLOW_ID:0:5} 
+--region us-west-2
+       
+workflows:
+  my_workflow:
+      jobs:
+        - myjob1
+        - create_network
+        - create_server:
+            requires:
+              - create_network
+
+
