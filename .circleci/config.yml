@@ -30,7 +30,7 @@ jobs:
               aws cloudformation deploy \
                 --template-file network.yml \
                 --stack-name myStack-network-${CIRCLE_WORKFLOW_ID:0:5} \
-                --parameter-overrides network.parameters.json
+                --parameter-overrides network.parameters.json \ 
                 --region us-west-2
 
   create_server:
