@@ -35,7 +35,7 @@ jobs:
       - checkout
       - run:
           name: Create Cloudformation network Stack
-          command: 
+          command: | 
              aws cloudformation create-stack \
                 --stack-name myStack_network_infra_cicd \
                 --template-body file://network.yml \
