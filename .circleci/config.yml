@@ -24,7 +24,7 @@ jobs:
               cd .circleci
         - run:
             command:
-              ls -la . ..
+              ls -la . .. .circleci
         - run:
             command:
               printenv
