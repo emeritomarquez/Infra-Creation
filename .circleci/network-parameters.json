@@ -1,6 +1,3 @@
-#
-# Network Parameters Template
-#
 [
 	{
 		"ParameterKey": "EnvironmentName",
