@@ -34,7 +34,7 @@ jobs:
     steps:
       - checkout
       - run:
-            name: Create Cloudformation network Stack
+          name: Create Cloudformation network Stack
           command: 
              aws cloudformation create-stack \
                 --stack-name myStack-network-infra-cicd \
