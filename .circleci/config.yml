@@ -13,10 +13,10 @@ jobs:
         - checkout # check out the code in the project directory
         - run:
 #            command:
-            echo "hello world" # run the `echo` command
-            pwd
-            ls -la . ..
-            printenv
+            - echo "hello world" # run the `echo` command
+            - pwd
+            - ls -la . ..
+            - printenv
   create_network: 
     docker:
       - image: amazon/aws-cli
