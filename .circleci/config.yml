@@ -49,13 +49,13 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout
-#      - run:
-#            name: Create Cloudformation server Stack
-#          command: 
-#              aws cloudformation create-stack \
-#                --stack-name myStack-server-infra-cicd \
-#                --template-body file://template.yml \
-#                --region us-west-2
+      - run:
+          name: Create Cloudformation server Stack
+          command: 
+              aws cloudformation create-stack \
+                --stack-name myStack-server-infra-cicd \
+                --template-body file://template.yml \
+                --region us-west-2
 
 #            aws cloudformation deploy --template-file template.yml --stack-name myStack-server-${CIRCLE_WORKFLOW_ID:0:5} --region us-west-2
        
