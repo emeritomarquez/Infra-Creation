@@ -53,7 +53,7 @@ jobs:
           name: Create Cloudformation server Stack
           command: 
               aws cloudformation create-stack \
-                --stack-name myStack-server-infra-cicd \
+                --stack-name myStackServerInfraCICD \
                 --template-body file://template.yml \
                 --region us-west-2
 
