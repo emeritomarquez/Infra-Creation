@@ -51,7 +51,7 @@ jobs:
       - checkout
       - run:
           name: Create Cloudformation server Stack
-          command: 
+          command: | 
               aws cloudformation create-stack \
                 --stack-name myStackServerInfraCICD \
                 --template-body file://template.yml \
