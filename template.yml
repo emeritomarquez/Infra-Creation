@@ -30,8 +30,12 @@ Resources:
           ToPort: '22'
           CidrIp: 18.236.159.233/32
         - IpProtocol: icmp
+          FromPort: '8'
+          ToPort: '-1'
           CidrIp: 18.236.159.233/32
         - IpProtocol: icmp
+          FromPort: '8'
+          ToPort: '-1'
           CidrIp: 52.26.26.14/32
         - IpProtocol: tcp
           FromPort: '3000'
