@@ -13,9 +13,9 @@ jobs:
         - image: circleci/node:13.8.0 
       steps:
         - checkout # check out the code in the project directory
-        - run:
-            command:
-              echo "hello world" # run the `echo` command
+#        - run:
+#            command:
+#              echo "hello world" # run the `echo` command
         - run:
             command:
               pwd
@@ -33,14 +33,14 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout
-      - run:
-          name: Create Cloudformation network Stack
-          command: | 
-             aws cloudformation create-stack \
-                --stack-name myStackNetworkInfraCICD \
-                --template-body file://network.yml \
-                --parameters file://network-parameters.json \
-                --region us-west-2
+#      - run:
+#          name: Create Cloudformation network Stack
+#          command: | 
+#             aws cloudformation create-stack \
+#                --stack-name myStackNetworkInfraCICD \
+#                --template-body file://network.yml \
+#                --parameters file://network-parameters.json \
+#                --region us-west-2
     
 #            aws cloudformation deploy --template-file network.yml --stack-name myStack-network-${CIRCLE_WORKFLOW_ID:0:5} --parameter-overrides network.parameters.json --region us-west-2 
 
